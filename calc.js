@@ -4,20 +4,28 @@ para2 = 0;
 operationStatus = false;
 lastOperator = ""
 
-
+// for numeric button press if zero then no digit prcoeding the zero 
 function press1(str) {
     var a = document.getElementById("input1");
-    if(a.value=="0"){        
+    if(operationStatus==true || a.value=="0"){
         a.value = str;
     }
     else{
         a.value += str;
+
     }
+
+    // if(a.value=="0"){        
+    //     a.value = str;
+    // }
+    // else{
+    //     a.value += str;
+    // }
     
 }
 
 
-
+// for delete function
 function remove() {
     var a = document.getElementById("input1");
     var display1 = a.value.toString()
@@ -40,7 +48,7 @@ function remove() {
 
 
 
-
+// recording the status of operation
 function operationStart(operator1) {
     var a = document.getElementById("input1");
     if (operationStatus == false) {
@@ -57,46 +65,50 @@ function operationStart(operator1) {
     }
     else {
         para2 = parseInt(a.value);
-        operationStatus = false;
+        // operationStatus = false;
         if (lastOperator == "+") {
             a.value = para1 + para2;
-            para1 = 0;
+            para1 = para1 + para2;;
             para2 = 0;
+            // lastoperator = "";
         }
         else if (lastOperator == "-") {
             a.value = para1 - para2;
             para1 = 0;
             para2 = 0;
+            // lastoperator = "";
 
         }
         else if (lastOperator == "X") {
             a.value = para1 * para2;
             para1 = 0;
             para2 = 0;
+            // lastoperator = "";
         }
         else if (lastOperator == "/") {
             a.value = para1 / para2;
             para1 = 0;
             para2 = 0;
+            // lastoperator = "";
         }
-
-
     }
+    
 
 }
 
 
-
+// for clearing screen
 function clearScreen() {
     document.getElementById("input1").value = "0";
 }
 
 
-
+// for clearing memory
 function clearWhole() {
     para1 = 0;
     para2 = 0;
     operationStatus = false;
     lastOperator = ""
     document.getElementById("input1").value = "0";
+    // alert(para1,para2)
 }
