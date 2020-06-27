@@ -1,3 +1,8 @@
+@font-face{
+    font-family: 'Audiowide';
+    src: url("font/Audiowide-Regular.ttf");
+}
+
 div{
     /* margin: 0 auto; */
     padding: 10px;
@@ -8,26 +13,28 @@ div{
 .main1{
     margin-top: 10px;
     border: 2px solid black;
-    width: 380px;
-    height: 550px;
-    background-color: lightskyblue;
-    border-radius: 20px;
+    width: 300px;
+    height: 500px;
+    background-color: white;
+    border-radius: 30px;
 }
 button{
-    width: 80px;
-    height: 50px;
+    width: 60px;
+    height: 40px;
     
 }
 #input1{
-    width: 335px;
+    width: 260px;
     height: 100px;
-    background-color: lightgrey;
+    background-color: lightgrey;   
+    font-size: 40px;
+    border-radius: 30px;
+    font-family: "Audiowide";
     
-    font-size: 50px;
 }
 p{
     font-style: italic;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-align: left;
     margin: 15px;
 
